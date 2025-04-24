@@ -1,0 +1,279 @@
+:root {
+  --primary: #4CAF50;
+  --secondary: #f0f0f0;
+  --text: #333;
+  --white: #fff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  color: var(--text);
+}
+
+header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+#mobile-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  flex-direction: column;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+#mobile-menu a {
+  padding: 12px 16px;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+#mobile-menu a:hover {
+  background-color: #f5f5f5;
+}
+
+#mobile-menu.show {
+  display: flex;
+}
+
+.produkte {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.produkt {
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.produkt:hover {
+  transform: scale(1.03);
+}
+
+.produkt img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #eee;
+  margin-bottom: 0.8rem;
+}
+
+.produkt h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.produkt p {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.button {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #45a049;
+}
+
+.details-link {
+  color: var(--primary);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.details-link:hover {
+  color: #388e3c;
+}
+
+.warenkorb {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  width: 280px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.warenkorb h2 {
+  margin-bottom: 0.5rem;
+}
+
+#warenkorbListe li {
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+#gesamtpreis {
+  margin-top: 0.8rem;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #f8f8f8;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 4rem;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #555;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Search Input */
+#suchfeld {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Warenkorb-Button Animation */
+.warenkorb.animate {
+  animation: cartAnimation 1s ease-out;
+}
+
+@keyframes cartAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Style für die Produktbilder */
+.produkt img {
+  border-radius: 8px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Produktkarten */
+.produkt {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.produkt:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Button-Icons */
+.button i {
+  margin-right: 8px;
+}
+.warenkorb.offen {
+  width: 90%;
+  max-height: 90vh;
+  right: 5%;
+  bottom: 5%;
+  padding: 2rem;
+  font-size: 1.05rem;
+  z-index: 9999;
+}
+#zahlungsoptionen {
+  margin-top: 1rem;
+  text-align: left;
+}
+#zahlungsoptionen h3 {
+  margin-bottom: 0.5rem;
+}
+#zahlungsoptionen label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.produkte {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .produkte {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

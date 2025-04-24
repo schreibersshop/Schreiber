@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SeifenStempel Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome CDN für Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+</head>
+<body>
+  <header>
+    <div class="logo">🧼 SeifenStempel Shop</div>
+    <input type="text" id="suchfeld" placeholder="Suche..." oninput="sucheProdukte()" />
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="mobile-menu" class="nav-hidden">
+      <a href="#" onclick="filterProdukte('alle')">Home</a>
+      <a href="#" onclick="filterProdukte('herz')">Herz-Stempel</a>
+      <a href="#" onclick="filterProdukte('blume')">Blumen-Stempel</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="produkte" id="produktContainer">
+      <!-- Produkte werden hier angezeigt -->
+    </section>
+
+    <aside class="warenkorb">
+      <h2>🛒 Warenkorb</h2>
+      <ul id="warenkorbListe"></ul>
+      <p id="gesamtpreis">Gesamt: 0 €</p>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+        <a href="#">Kontakt</a>
+      </div>
+      <p>&copy; 2025 SeifenStempel Shop – Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
